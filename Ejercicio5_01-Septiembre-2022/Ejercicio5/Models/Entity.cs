@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio5.Models
 {
-    internal abstract class Entity
+    public abstract class Entity
     {
         public string Id { get; protected set; }
         protected Entity(string id)

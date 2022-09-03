@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio5.Models
 {
-    internal class TrabajadorIngeniero : Entity
+    public class TrabajadorIngeniero : Entity
     {
         public string TrabajadorId { get; private set; }
         public string IngenierioId { get; private set; }

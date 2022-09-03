@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace Ejercicio5.Models
 {
-    internal class Ingeniero : Entity
+    public class Ingeniero : Entity
     {
         public string TarjetaProfesional { get; private set; }
         public List<TrabajadorIngeniero> TrabajadorIngenieros { get; private set; }
-        public Ingeniero(string id, string tarjetaProfesional) : base(id)
+        private Ingeniero(string id, string tarjetaProfesional) : base(id)
         {
             TarjetaProfesional = tarjetaProfesional;
             TrabajadorIngenieros = new();
         }
-        public void addIngeniero(string ingenieroId)
+        public static Ingeniero Build(string id,string tarjetaProfesional)
+        {
+            return new Ingeniero(id, tarjetaProfesional);
+        }
+        public void addTrabajador(string trabajadorId)
         {
             this.TrabajadorIngenieros.Add(
                 new TrabajadorIngeniero(
                     Guid.NewGuid().ToString(),
-                    ingenieroId, this.Id));
+                    trabajadorId, this.Id));
         }
     }
 }

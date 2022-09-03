@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio5.Models
 {
-    internal class Trabajador : Entity
+    public class Trabajador : Entity
     {
         public string Name { get; private set; }
         public ConstruccionObra ConstruccionObra { get; private set; }
@@ -16,6 +16,10 @@ namespace Ejercicio5.Models
             Name = name;
             ConstruccionObra = construccionObra;
             TrabajadorIngenieros = new();
+        }
+        public static Trabajador Build(string id, string name, ConstruccionObra construccionObra)
+        {
+            return new Trabajador(id, name, construccionObra);
         }
         public void addIngeniero(string ingenierioId)
         {
